@@ -1,0 +1,9 @@
+{
+  "name": "rack-up-user-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/rack-up-user-e2e/src",
+  "implicitDependencies": ["rack-up-user"],
+  "// targets": "to see all targets run: nx show project rack-up-user-e2e --web",
+  "targets": {}
+}

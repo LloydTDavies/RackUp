@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "rackup-4a20e"
+  },
+  "targets": {
+    "rackup-4a20e": {
+      "hosting": {
+        "rack-up-administrator": [
+          "rack-up-administrator"
+        ],
+        "rack-up": [
+          "rack-up"
+        ]
+      }
+    }
+  }
+}

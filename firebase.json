@@ -1,0 +1,26 @@
+{
+  "hosting": [
+    {
+      "site": "rack-up-administrator",
+      "public": "dist/apps/RackUp-Admin/browser",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "site": "rack-up",
+      "public": "dist/apps/rack-up-user/browser",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

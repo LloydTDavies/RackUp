@@ -1,1 +1,2 @@
-export * from './lib/ui.component';
+
+export { AppShellComponent } from './lib/app-shell/app-shell.component';

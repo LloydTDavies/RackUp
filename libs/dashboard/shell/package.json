@@ -1,12 +1,10 @@
 {
-  "name": "@rack-up/ui",
+  "name": "@rack-up/dashboard-shell",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^18.2.0",
     "@angular/core": "^18.2.0",
-    "@angular/cdk": "^18.2.1",
-    "@angular/material": "^18.2.1",
-    "rxjs": "~7.8.0"
+    "@rack-up/dashboard-config": "0.0.1"
   },
   "sideEffects": false
 }

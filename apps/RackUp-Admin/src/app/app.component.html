@@ -1,1 +1,8 @@
-<app-nx-welcome></app-nx-welcome> <router-outlet></router-outlet>
+<lib-app-shell title="RackUp Admin">
+  <mat-nav-list menuItems>
+    <a mat-list-item routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+  </mat-nav-list>
+  <main main>
+    <router-outlet />
+  </main>
+</lib-app-shell>

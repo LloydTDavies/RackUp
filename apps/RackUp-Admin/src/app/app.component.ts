@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { AppShellComponent } from '@rack-up/ui';
+import { MatNavList, MatListItem } from '@angular/material/list';
+
+const components = [AppShellComponent, MatNavList, MatListItem];
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [RouterModule, ...components],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

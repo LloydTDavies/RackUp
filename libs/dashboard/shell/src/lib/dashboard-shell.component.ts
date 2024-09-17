@@ -11,5 +11,5 @@ import { DASHBOARD_CONFIG } from '@rack-up/dashboard-config';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardShellComponent {
-  config = inject(DASHBOARD_CONFIG);
+  config = inject(DASHBOARD_CONFIG) || { mode: 'Admin' };
 }

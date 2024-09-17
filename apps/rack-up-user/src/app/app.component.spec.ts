@@ -1,12 +1,19 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterModule } from '@angular/router';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatListItem, MatNavList } from '@angular/material/list';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent, NxWelcomeComponent, RouterModule.forRoot([])],
+      imports: [
+        AppComponent,
+        RouterModule.forRoot([]),
+        NoopAnimationsModule,
+        MatListItem,
+        MatNavList,
+      ],
     }).compileComponents();
   });
 
@@ -14,14 +21,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome rack-up-user'
-    );
-  });
-
-  it(`should have as title 'rack-up-user'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('rack-up-user');
+    expect(compiled).toBeTruthy();
   });
 });

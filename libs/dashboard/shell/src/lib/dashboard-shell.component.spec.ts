@@ -1,21 +1,33 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { DashboardShellComponent } from './dashboard-shell.component';
+import { DASHBOARD_CONFIG } from '@rack-up/dashboard-config';
+
+interface DashboardJourneyConfig {
+  mode: 'Admin' | 'User';
+}
 
 describe('DashboardShellComponent', () => {
-  let component: DashboardShellComponent;
-  let fixture: ComponentFixture<DashboardShellComponent>;
+ const createComponent = (config: DashboardJourneyConfig) => {
+   TestBed.configureTestingModule({
+    providers: [
+      { provide: DASHBOARD_CONFIG, useValue: config }
+    ]
+   });
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [DashboardShellComponent],
-    }).compileComponents();
+   return TestBed.createComponent(DashboardShellComponent);
+ }
 
-    fixture = TestBed.createComponent(DashboardShellComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+ describe('Dashboard config', () => {
+   it('should be Admin', () => {
+     const fixture = createComponent({ mode: 'Admin' });
+     fixture.detectChanges();
+     expect(fixture.componentInstance.config.mode).toBe('Admin');
+   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+   it('should be User', () => {
+     const fixture = createComponent({ mode: 'User' });
+     fixture.detectChanges();
+     expect(fixture.componentInstance.config.mode).toBe('User');
+   });
+ });
 });
